@@ -32,7 +32,7 @@ export default function RootLayout({
         <nav className="border-b mb-8 p-4">
           <div className="max-w-4xl mx-auto flex justify-between items-center">
             <Link href="/" className="font-bold text-xl">
-              DevLog
+              Kurabiye Log
             </Link>
             <div className="space-x-4">
               <Link href="/" className="hover:text-blue-500">
