@@ -1,26 +1,102 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@800&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #171717;
+  --foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Tailwind değişkenlerini eşitleyelim */
+  --font-sans: 'Inter', ui-sans-serif, system-ui;
+  --font-display: 'Montserrat', sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Arial yerine Inter kullanıyoruz, çok daha modern durur */
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  /* Yazıların birbirine girmemesi için aralık */
+  font-size: 1.125rem;
+  /* Varsayılan boyuttan biraz daha büyük */
+}
+
+/* Başlıkların daha havalı durması için */
+h1,
+h2,
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -0.02em;
+  /* Sola hizalıyoruz */
+  text-decoration: none;
+  /* Başlıkların altı çizili olmaması için text-decoration kaldırılıyor */
+}
+
+/* Ana başlık beyaz, alt başlıklar turuncu yapılıyor */
+h1 {
+  color: #FFFFFF;
+  /* Beyaz */
+}
+
+h2,
+h3 {
+  color: #FF7F50;
+  /* Coral turuncusu */
+}
+
+/* Başlık boyutlarını artırıyoruz ve diğer yazılarla aralarındaki boşluğu artırıyoruz */
+
+
+h2 {
+  font-size: 2rem;
+  /* Daha büyük boyut */
+  margin-top: 1.25rem;
+  /* Alt boşluk */
+}
+
+h3 {
+  font-size: 1.75rem;
+  /* Daha büyük boyut */
+  margin-top: 1rem;
+  /* Alt boşluk */
+}
+
+/* Tipografi Detayları */
+.prose h1,
+.prose h2,
+.prose h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.prose p {
+  line-height: 1.8;
+  /* Okumayı kolaylaştıran satır aralığı */
+}
+
+/* Resimlerin hem üstünde hem altında boşluk artırıyoruz */
+.prose img {
+  border-radius: 12px;
+  /* Kenarları yuvarlat */
+  margin-top: 1.2rem;
+  /* Üstteki boşluğu artır */
+  margin-bottom: 1.2rem;
+  /* Alttaki boşluğu artır */
+}
+
+/* Linkler için hover efekti geri ekleniyor */
+a:hover {
+  color: #1E3A8A;
+  /* Koyu mavi hover rengi */
+}
+
+.prose a:hover {
+  color: #1E3A8A;
+  /* Koyu mavi hover rengi */
 }
