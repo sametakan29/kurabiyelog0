@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/posts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://yourdomain.com'; // Siteninizin domain'ini yazın
+    const baseUrl = 'https://www.kurabiyelog.tech';
 
     // Ana sayfayı ekle
     const routes = [
