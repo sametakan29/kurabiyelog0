@@ -12,8 +12,8 @@ export default async function PostPage({
     params: Promise<{ slug: string }>
 }) {
     const { slug } = await params;
-
     const fullPath = path.join(process.cwd(), 'content', `${slug}.mdx`);
+
     if (!fs.existsSync(fullPath)) {
         notFound();
     }
@@ -29,11 +29,19 @@ export default async function PostPage({
     };
 
     return (
-        <article className="max-w-3xl mx-auto p-8 prose prose-slate lg:prose-xl dark:prose-invert">
-            <h1 className="mb-4">{data.title}</h1>
-            <p className="text-gray-500 mb-8">{data.date}</p>
-            { }
+        /* Buradaki sınıfları güncelledik: max-width ve font ayarları eklendi */
+        <article className="max-w-4xl mx-auto p-6 md:p-12 prose prose-neutral lg:prose-xl dark:prose-invert prose-img:rounded-2xl prose-img:shadow-md">
+
+            {/* Başlık kısmını daha belirgin yaptık */}
+            <header className="mb-10">
+                <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+                    {data.title}
+                </h1>
+                <p className="text-orange-500 font-medium">{data.date} • Kurabiye Log</p>
+            </header>
+
             <MDXRemote source={content} options={options} />
+
         </article>
     );
 }
