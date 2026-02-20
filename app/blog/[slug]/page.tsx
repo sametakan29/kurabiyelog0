@@ -30,14 +30,14 @@ export default async function PostPage({
 
     return (
         /* Buradaki sınıfları güncelledik: max-width ve font ayarları eklendi */
-        <article className="max-w-4xl mx-auto p-6 md:p-12 prose prose-neutral lg:prose-xl dark:prose-invert prose-img:rounded-2xl prose-img:shadow-md">
+        <article className="max-w-4xl mx-auto p-6 md:p-12 prose prose-neutral lg:prose-xl dark:prose-invert prose-img:rounded-2xl prose-img:shadow-md prose-img:w-full prose-img:mx-auto">
 
             {/* Başlık kısmını daha belirgin yaptık */}
             <header className="mb-10">
                 <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
                     {data.title}
                 </h1>
-                <p className="text-orange-500 font-medium">{data.date} • Kurabiye Log</p>
+                <p className="text-gray-400 font-medium">{data.date} • Kurabiye Log</p>
             </header>
 
             <MDXRemote source={content} options={options} />
