@@ -1,5 +1,5 @@
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@800&display=swap');
+/* Google Fonts Import - daha fazla weight ekledik */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@800&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -20,6 +20,8 @@ body {
   color: var(--foreground);
   /* Arial yerine Inter kullanıyoruz, çok daha modern durur */
   font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  /* Daha ince font */
   line-height: 1.7;
   /* Yazıların birbirine girmemesi için aralık */
   font-size: 1.125rem;
@@ -37,16 +39,12 @@ h3 {
   /* Başlıkların altı çizili olmaması için text-decoration kaldırılıyor */
 }
 
-/* Ana başlık beyaz, alt başlıklar turuncu yapılıyor */
-h1 {
-  color: #FFFFFF;
-  /* Beyaz */
-}
-
+/* Tüm başlıklar beyaz */
+h1,
 h2,
 h3 {
-  color: #FF7F50;
-  /* Coral turuncusu */
+  color: #FFFFFF;
+  /* Beyaz */
 }
 
 /* Başlık boyutlarını artırıyoruz ve diğer yazılarla aralarındaki boşluğu artırıyoruz */
@@ -78,10 +76,23 @@ h3 {
 .prose p {
   line-height: 1.8;
   /* Okumayı kolaylaştıran satır aralığı */
+  font-weight: 300;
+  /* İnce font */
+  color: #D1D5DB;
+  /* Açık gri - daha sönük */
+}
+
+/* Bold metinler için belirgin ağırlık */
+.prose strong,
+.prose b {
+  font-weight: 700;
+  /* Çok belirgin */
 }
 
 /* Resimlerin hem üstünde hem altında boşluk artırıyoruz */
 .prose img {
+  width: 100%;
+  /* Tam genişlik */
   border-radius: 12px;
   /* Kenarları yuvarlat */
   margin-top: 1.2rem;
