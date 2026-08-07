@@ -1,5 +1,14 @@
 import { getAllPosts } from '@/lib/posts';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Kurabiye Log | Teknoloji, Yapay Zeka ve Güncel Blog Yazıları",
+  description: "Yapay zeka teknolojileri, yazılım rehberleri, kodlama ipuçları ve samimi teknoloji sohbetleri.",
+  alternates: {
+    canonical: "https://www.kurabiyelog.tech",
+  },
+};
 
 export default function Home() {
   const posts = getAllPosts();

@@ -15,8 +15,48 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kurabiye Log",
-  description: "Teknoloji üzerine içerikler",
+  metadataBase: new URL('https://www.kurabiyelog.tech'),
+  title: {
+    default: "Kurabiye Log | Teknoloji, Yapay Zeka ve Yazılım Blogu",
+    template: "%s | Kurabiye Log",
+  },
+  description: "Teknoloji, yapay zeka, geliştirici araçları, kodlama ipuçları ve samimi teknoloji rehberleri.",
+  keywords: ["teknoloji blogu", "yapay zeka", "yazılım", "ai agent", "kodlama", "kurabiye log"],
+  authors: [{ name: "Kurabiye Log" }],
+  creator: "Kurabiye Log",
+  publisher: "Kurabiye Log",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "https://www.kurabiyelog.tech",
+  },
+  openGraph: {
+    type: "website",
+    locale: "tr_TR",
+    url: "https://www.kurabiyelog.tech",
+    siteName: "Kurabiye Log",
+    title: "Kurabiye Log | Teknoloji, Yapay Zeka ve Yazılım Blogu",
+    description: "Teknoloji, yapay zeka, geliştirici araçları, kodlama ipuçları ve samimi teknoloji rehberleri.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kurabiye Log | Teknoloji, Yapay Zeka ve Yazılım Blogu",
+    description: "Teknoloji, yapay zeka, geliştirici araçları, kodlama ipuçları ve samimi teknoloji rehberleri.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
