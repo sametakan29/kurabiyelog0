@@ -1,57 +1,53 @@
-/* Terminal hissi için mono ağırlıklı, daha soğuk bir tipografi dili */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+/* Sakin, göz dinlendiren sıcak terminal teması */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #0b0f0c;
-  --foreground: #e7f3ea;
-  --terminal-green: #7cff9c;
-  --terminal-dim: #94a3a0;
-  --terminal-border: rgba(124, 255, 156, 0.18);
+  --background: #121417;
+  --foreground: #e2e8f0;
+  --accent-amber: #f3b368;
+  --accent-sage: #86efac;
+  --terminal-dim: #94a3b8;
+  --terminal-border: rgba(255, 255, 255, 0.08);
 }
 
 body {
   background:
-    radial-gradient(circle at top, rgba(124, 255, 156, 0.05), transparent 35%),
-    linear-gradient(180deg, #0b0f0c 0%, #0a0d0b 100%);
+    radial-gradient(circle at top, rgba(243, 179, 104, 0.04), transparent 40%),
+    linear-gradient(180deg, #121417 0%, #0e1012 100%);
   color: var(--foreground);
   font-family: 'Inter', sans-serif;
   font-weight: 300;
-  line-height: 1.7;
+  line-height: 1.75;
   font-size: 1.125rem;
   letter-spacing: 0.01em;
+  min-height: 100vh;
 }
 
+/* Yumuşak noktalı arka plan dokusu */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(rgba(124, 255, 156, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(124, 255, 156, 0.02) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.38), transparent 88%);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 90%);
 }
 
 ::selection {
-  background: rgba(124, 255, 156, 0.22);
-  color: #f3fff5;
+  background: rgba(243, 179, 104, 0.25);
+  color: #fff;
 }
 
-/* Başlıkların daha havalı durması için */
+/* Başlıklar */
 h1,
 h2,
 h3 {
   font-family: 'Inter', sans-serif;
   letter-spacing: -0.02em;
+  color: #ffffff;
 }
-
-/* Tüm başlıklar beyaz */
-h1,
-h2,
-h3 {
-  color: #FFFFFF;
-}
-
 
 h2 {
   font-size: 2rem;
@@ -63,58 +59,62 @@ h3 {
   margin-top: 1rem;
 }
 
-/* Tipografi Detayları */
+/* Tipografi & Blog Okunabilirliği */
 .prose h1,
 .prose h2,
 .prose h3 {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: #f8fafc;
 }
 
 .prose p {
-  line-height: 1.8;
+  line-height: 1.85;
   font-weight: 300;
-  color: #c7d5cf;
+  color: #cbd5e1;
 }
 
-/* Bold metinler için belirgin ağırlık */
 .prose strong,
 .prose b {
-  font-weight: 700;
+  font-weight: 600;
+  color: #f1f5f9;
 }
 
-/* Resimlerin hem üstünde hem altında boşluk artırıyoruz */
 .prose img {
   width: 100%;
-  border-radius: 18px;
-  margin-top: 1.2rem;
-  margin-bottom: 1.2rem;
-  border: 1px solid var(--terminal-border);
-  box-shadow: 0 0 0 1px rgba(124, 255, 156, 0.06), 0 20px 60px rgba(0, 0, 0, 0.45);
+  border-radius: 16px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
-/* Linkler için hover efekti geri ekleniyor */
 a:hover {
-  color: var(--terminal-green);
+  color: var(--accent-amber);
+}
+
+.prose a {
+  color: #f3b368;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.15s ease;
 }
 
 .prose a:hover {
-  color: var(--terminal-green);
+  color: #fcd34d;
 }
 
+/* Sakin Cam / Terminal Kart Yüzeyleri */
 .terminal-surface {
-  background: linear-gradient(180deg, rgba(14, 20, 16, 0.88), rgba(8, 12, 9, 0.94));
-  border: 1px solid rgba(124, 255, 156, 0.12);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+  background: rgba(24, 27, 32, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
 }
 
 .terminal-border {
-  border: 1px solid rgba(124, 255, 156, 0.14);
-}
-
-.terminal-glow {
-  box-shadow: 0 0 0 1px rgba(124, 255, 156, 0.06), 0 0 18px rgba(124, 255, 156, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .terminal-muted {
@@ -122,5 +122,5 @@ a:hover {
 }
 
 .cookie-shadow {
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }

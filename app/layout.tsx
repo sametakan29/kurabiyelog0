@@ -67,22 +67,22 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <nav className="sticky top-0 z-50 border-b border-white/10 bg-[#0b0f0c]/90 backdrop-blur-md">
-          <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 md:px-8">
-            <Link href="/" className="flex items-center gap-3 font-mono text-sm font-semibold tracking-[0.24em] text-[#e7f3ea]">
+        <nav className="sticky top-0 z-50 border-b border-white/5 bg-[#121417]/80 backdrop-blur-md">
+          <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3.5 md:px-8">
+            <Link href="/" className="flex items-center gap-3 font-mono text-sm font-semibold tracking-[0.2em] text-[#f1f5f9] transition hover:text-[#f3b368]">
               <span className="flex gap-1.5">
-                <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
-                <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
-                <span className="h-3 w-3 rounded-full bg-[#28c840]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#ef4444]/80" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#f59e0b]/80" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#10b981]/80" />
               </span>
               <span>KURABIYE.LOG</span>
             </Link>
-            <div className="flex items-center gap-6 font-mono text-sm text-[#b8c7c0]">
-              <Link href="/" className="transition hover:text-[#7cff9c]">
-                /haberler
+            <div className="flex items-center gap-6 font-mono text-sm text-[#94a3b8]">
+              <Link href="/" className="transition hover:text-[#f3b368]">
+                /yazılar
               </Link>
-              <Link href="/rehberler" className="transition hover:text-[#7cff9c]">
-                /rehberler
+              <Link href="/" className="transition hover:text-[#f3b368]">
+                /hakkında
               </Link>
             </div>
           </div>

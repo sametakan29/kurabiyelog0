@@ -5,6 +5,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypeHighlight from 'rehype-highlight';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import 'highlight.js/styles/atom-one-dark.css';
 
 export async function generateMetadata({
@@ -98,20 +99,26 @@ export default async function PostPage({
     };
 
     return (
-        <article className="max-w-4xl mx-auto p-6 md:p-12 prose prose-neutral lg:prose-xl dark:prose-invert prose-img:rounded-2xl prose-img:shadow-md prose-img:w-full prose-img:mx-auto">
+        <main className="mx-auto max-w-4xl px-4 py-8 md:px-8 md:py-12">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
-            <header className="mb-10">
-                <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-                    {data.title}
-                </h1>
-                <p className="text-gray-400 font-medium">{data.date} • Kurabiye Log</p>
-            </header>
+            <Link href="/" className="mb-6 inline-flex items-center gap-2 font-mono text-xs tracking-wider text-[#f3b368] transition hover:text-[#fcd34d]">
+                ← /yazılar
+            </Link>
 
-            <MDXRemote source={content} options={options} />
-        </article>
+            <article className="prose prose-neutral lg:prose-xl dark:prose-invert prose-img:rounded-2xl prose-img:border prose-img:border-white/10 prose-img:shadow-md prose-img:w-full prose-img:mx-auto">
+                <header className="mb-10 border-b border-white/5 pb-8">
+                    <p className="mb-3 font-mono text-xs tracking-widest text-[#86efac]">{data.date} • KURABIYE LOG</p>
+                    <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-[#f8fafc] mb-4">
+                        {data.title}
+                    </h1>
+                </header>
+
+                <MDXRemote source={content} options={options} />
+            </article>
+        </main>
     );
 }
