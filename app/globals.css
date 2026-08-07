@@ -94,15 +94,21 @@ a:hover {
   color: var(--accent-amber);
 }
 
-.prose a {
-  color: #f3b368;
+.prose a,
+.prose strong a,
+.prose a strong,
+.prose blockquote a {
+  color: #f3b368 !important;
   text-decoration: underline;
   text-underline-offset: 4px;
   transition: color 0.15s ease;
 }
 
-.prose a:hover {
-  color: #fcd34d;
+.prose a:hover,
+.prose strong a:hover,
+.prose a strong:hover,
+.prose blockquote a:hover {
+  color: #fcd34d !important;
 }
 
 /* Sakin Cam / Terminal Kart Yüzeyleri */
