@@ -12,19 +12,20 @@ export function getAllPosts() {
             const slug = fileName.replace(/\.mdx$/, '');
             const fullPath = path.join(postsDirectory, fileName);
             const fileContents = fs.readFileSync(fullPath, 'utf8');
-            const stat = fs.statSync(fullPath);
             const { data } = matter(fileContents);
+
+            const rawDate = data.date ? String(data.date) : '';
+            const displayDate = rawDate.slice(0, 10);
+            const timestamp = new Date(rawDate).getTime() || 0;
 
             return {
                 slug,
-                mtimeMs: stat.mtimeMs,
-                ...(data as { title: string; date: string; excerpt: string }),
+                rawDate,
+                date: displayDate,
+                timestamp,
+                ...(data as { title: string; excerpt: string }),
             };
         });
 
-    return allPostsData.sort((a, b) => {
-        if (a.date < b.date) return 1;
-        if (a.date > b.date) return -1;
-        return b.mtimeMs - a.mtimeMs;
-    });
+    return allPostsData.sort((a, b) => b.timestamp - a.timestamp);
 }

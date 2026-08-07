@@ -111,7 +111,7 @@ export default async function PostPage({
 
             <article className="prose prose-neutral lg:prose-xl dark:prose-invert prose-img:rounded-2xl prose-img:border prose-img:border-white/10 prose-img:shadow-md prose-img:w-full prose-img:mx-auto">
                 <header className="mb-10 border-b border-white/5 pb-8">
-                    <p className="mb-3 font-mono text-xs tracking-widest text-[#86efac]">{data.date} • KURABIYE LOG</p>
+                    <p className="mb-3 font-mono text-xs tracking-widest text-[#86efac]">{String(data.date).slice(0, 10)} • KURABIYE LOG</p>
                     <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-[#f8fafc] mb-4">
                         {data.title}
                     </h1>
