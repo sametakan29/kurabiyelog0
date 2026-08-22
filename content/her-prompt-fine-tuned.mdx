@@ -1,0 +1,254 @@
+---
+title: "Her Prompt Fine-Tuned: Geleceğin Yapay Zekâsı Model Değil, Sistem Olabilir"
+date: "2026-08-22T22:45:00"
+excerpt: "Yapay zekâda asıl mesele hangi modeli kullandığımız değil, onu görev için nasıl şekillendirdiğimiz olabilir. Prompt mühendisliği, fine-tuning ve geleceğin AI sistemleri."
+keywords:
+  [
+    "her prompt fine-tuned",
+    "fine tuning nedir",
+    "prompt engineering",
+    "yapay zeka ozellestirme",
+    "ai agents vs llm",
+    "rag ve memory",
+    "goreve ozel yapay zeka",
+    "yapay zekanin gelecegi",
+  ]
+---
+
+Yapay zekâ kullanırken çoğumuz aynı şeyi yapıyoruz:
+
+Bir modele gidiyoruz. Bir prompt yazıyoruz. Cevabını alıyoruz.
+
+Sonra biraz daha iyi bir prompt yazıp tekrar deniyoruz. Bazen mükemmel çalışıyor, bazen de aynı modeli kullanmamıza rağmen neden bu kadar kötü cevap verdiğini anlamıyoruz.
+
+Peki ya sorun modelde değilse?
+
+Peki ya gelecekte asıl mesele hangi yapay zekâyı kullandığımız değil, **onu hangi görev için nasıl özelleştirdiğimizse?**
+
+Belki de geleceğin yapay zekâ dünyasında tek bir model olmayacak; her iş için biraz farklı davranan, biraz farklı düşünen, biraz farklı eğitilmiş sistemler olacak.
+
+Ben buna bir isim vermek istiyorum: **Her prompt fine-tuned.**
+
+---
+
+## Önce bir ayrım yapalım
+
+Burada *"fine-tuning"* kelimesini klasik teknik anlamından biraz daha geniş kullanıyorum. Çünkü teknik olarak prompt yazmak ile bir modeli fine-tune etmek aynı şey değil:
+
+- **Fine-tuning** dediğimiz şey, önceden eğitilmiş bir modelin belirli bir veri setiyle yeniden eğitilmesi ve modelin ağırlıklarının değiştirilmesidir.
+- **Prompt** ise modele o an ne yapmasını istediğimizi söylediğimiz yönlendirmedir.
+
+Yani özetle:
+
+> **Prompt modeli yönlendirir, Fine-tuning modeli değiştirir.**
+
+Ama bence gelecekte bu ikisinin arasındaki sınır çok daha ilginç bir hâle gelecek. Çünkü modeller artık sadece metin üretmiyor; giderek daha fazla araç (tools) kullanıyor:
+
+- Kod yazıyor,
+- Dosya okuyor,
+- Web'de anlık arama yapıyor,
+- Bilgisayar ve işletim sistemi kontrol ediyor,
+- Başka yapay zekâ modellerini alt ajan olarak çağırıyor.
+
+Ve bütün bunları yaparken aslında tek bir "statik zekâ" gibi davranmak zorunda değiller.
+
+---
+
+## Belki tek bir yapay zekâya ihtiyacımız yok
+
+Bir yazılımcı olduğunuzu düşünün:
+
+- Sabah kod yazıyorsunuz.
+- Öğleden sonra müşteriyle toplantı yapıyorsunuz.
+- Akşam bir rapor hazırlıyorsunuz.
+- Gece de yeni bir teknoloji araştırıyorsunuz.
+
+Bütün bu işleri aynı insana yaptırabilirsiniz ama aynı insan bütün görevlerde aynı performansı ve aynı odaklanmayı gösteremez. Çünkü her iş farklı bir zihinsel mod gerektirir.
+
+Kod yazarken başka, rapor yazarken başka, araştırma yaparken başka, müşteriyle konuşurken bambaşka düşünürsünüz.
+
+Yapay zekâlarda da benzer bir şey geçerli: Tek bir model her şeyi yapabilir ama **neden her şeyi aynı şekilde yapmak zorunda olsun?**
+
+Bir modele:
+
+> *"Bana bir blog yazısı yaz."*
+
+dediğinizde aldığı talimat ile;
+
+> *"Bu kodu production ortamına göndermeden önce güvenlik açıklarını bul."*
+
+dediğiniz talimat aynı şey değildir. İkisinin başarı kriteri bile tamamen farklıdır:
+
+- Birinde **yaratıcılık ve akıcılık** önemliyken,
+- Diğerinde **doğruluk, deterministik davranış ve katı güvenlik kuralları** esastır.
+
+O zaman belki de geleceğin sistemi şunu yapacak: **Göreve göre kendi çalışma modunu ve kişiliğini dinamik olarak değiştirecek.**
+
+---
+
+## Prompt sadece bir komut olmayabilir
+
+Bugün "prompt" deyince aklımıza genellikle kutucuğa yazılan 2-3 satırlık bir metin geliyor:
+
+- *"Şunu yap."*
+- *"Şöyle cevap ver."*
+- *"Uzman bir yazılımcı gibi davran."*
+
+Ama prompt'un gelecekte bundan çok daha fazlasını taşıması mümkün. Bir prompt artık;
+
+- Hangi araçların (tools) kullanılacağını,
+- Hangi harici kaynaklara güvenileceğini,
+- Hangi formatta çıktı verileceğini,
+- Hangi hataların kesinlikle kabul edilemeyeceğini,
+- Hangi kişiliğin ve üslubun takınılacağını,
+- Hatta hangi tür düşünme zincirinin (chain-of-thought) izleneceğini belirleyebilir.
+
+Yani prompt giderek bir **çalışma ortamına (mini işletim sistemine)** dönüşebilir.
+
+Ve burada çok ilginç bir soru ortaya çıkıyor:
+
+> **Eğer her görev için farklı bir çalışma ortamı oluşturabiliyorsak, neden her görev için aynı genel yapay zekâ davranışını kullanalım?**
+
+---
+
+## Fine-tuning burada devreye giriyor
+
+Diyelim ki bir şirketin müşteri destek sistemini yapıyorsunuz. Model genel kültür olarak çok zeki ama şirketinizin dilini, kurumsal hafızasını bilmiyor:
+
+- Hangi müşteriye nasıl cevap verileceğini bilmiyor.
+- Hangi durumda özür dileneceğini bilmiyor.
+- Hangi durumda konuyu insan çalışanına devretmesi gerektiğini bilmiyor.
+
+Modele bunu her seferinde upuzun sistem promptlarıyla anlatabilirsiniz ya da onu belirli senaryo örnekleriyle eğitebilirsiniz (fine-tuning).
+
+İşte fine-tuning burada değerli hâle geliyor. Model artık sadece *"soruyu cevapla"* demiyor; şirketin nasıl cevap vermesi gerektiğine dair köklü bir davranış biçimi ediniyor.
+
+Ama şimdi bunu bir adım ileri götürelim:
+
+**Ya bunu sadece şirket seviyesinde değil, anlık görev seviyesinde yaparsak?**
+
+---
+
+## Her görev kendi uzmanını yaratabilir
+
+Bir yapay zekâ sistemimiz olduğunu düşünelim. Bu sistemin içinde farklı görev modülleri var:
+
+- Kod yazma
+- Araştırma
+- Blog yazma
+- Veri analizi
+- Müşteri desteği
+- Hukuki doküman analizi
+- Finansal raporlama
+
+Hepsinin arkasında aynı temel büyük dil modeli (LLM) bulunabilir. Ama her birinin üzerinde bambaşka bir mimari katman oturur:
+
+- Farklı prompt kurgusu
+- Farklı araçlar ve entegrasyonlar
+- Farklı kurallar ve filtreler
+- Farklı bellek (memory) ve bağlam
+- Belki göreve özel mikro fine-tuning
+
+Sonuçta dışarıdan baktığımızda tek bir sistem görüyoruz ama içeride aslında **onlarca farklı uzmanlık** çalışıyor.
+
+Bu durumda *"Ben hangi AI modelini kullanıyorum?"* sorusu önemini kaybediyor. Daha kritik ve değerli soru şu oluyor:
+
+> **"Bu görev için yapay zekâyı nasıl şekillendirdim?"**
+
+*(Daha önce tartıştığımız [Claude Opus mu Yoksa 100 AI Agent'ı mı?](/blog/claude-opus-mu-100-yapay-zeka-agenti-mi) ve [AGI'ye Giden Yol](/blog/agi-ye-giden-yol-tek-bir-super-yapay-zeka-degilse) yazılarında da tam olarak bu çoklu uzmanlık fikrinin temellerini konuşmuştuk.)*
+
+---
+
+## Belki geleceğin modeli değil, sistemi önemli olacak
+
+Yapay zekâ yarışında sürekli model isimlerini konuşuyoruz:
+
+- GPT şu kadar iyi...
+- Claude kodlamada daha başarılı...
+- Gemini bağlam uzunluğunda önde...
+- Yeni model çıktı, şu kadar parametre, şu kadar hızlı...
+
+Ama modeller birbirine yaklaştıkça ve performans farkları kapandıkça başka bir şey asıl farkı yaratmaya başlayacak: **Modelin etrafında ne kurduğunuz.**
+
+Çünkü herkes aynı temel modellere API üzerinden erişebiliyorsa, rekabet avantajı sadece modelin kendisi olamaz. Farkı oluşturan şeyler:
+
+- Sizin oluşturduğunuz prompt mimarisi,
+- Beslediğiniz özel veri ve RAG katmanı,
+- Entegre ettiğiniz araçlar ve API'lar,
+- Kurguladığınız bellek (memory) yapısı,
+- Tasarladığınız iş akışları (workflow),
+- Ve en önemlisi: **Modeli belirli bir problem için ne kadar iyi özelleştirdiğiniz** olacaktır.
+
+---
+
+## "Her Prompt Fine-Tuned" Vizyonu
+
+İşte benim kafamdaki fikir tam olarak burada düğümleniyor.
+
+*"Her prompt fine-tuned"* derken teknik olarak her komut gönderdiğimizde model ağırlıklarının yeniden eğitildiğini kastetmiyorum. Daha çok bir gelecek mimarisinden bahsediyorum:
+
+Bir prompt artık sadece modele fırlatılan bir emir cümlesi değil;
+
+- Kendi amacı olan,
+- Kendi araç setine sahip,
+- Kendi sınırları ve kuralları olan,
+- Kendi hafızasını yöneten,
+- Belki mikro eğitimlerden geçmiş
+
+**küçük bir yapay zekâ uzmanına** dönüşebilir.
+
+Yazı yazdırmak istediğimde başka bir uzman, kod yazdırmak istediğimde başka bir uzman, derin araştırma yaptırmak istediğimde bambaşka bir uzman devreye girer. Ve bütün bunların altında aynı temel model altyapısı çalışabilir.
+
+Bu durum insan beyninin çalışma biçimine de çok benziyor: Aynı biyolojik beyne sahibiz ama piyano çalarken ile matematik problemi çözerken tamamen farklı nöronal devrelerimizi devreye sokuyoruz.
+
+---
+
+## Peki bu gerçekten gerekli mi?
+
+Belki de değil.
+
+Belki gelecekte modeller o kadar kudretli olacak ki hiçbir özelleştirmeye gerek kalmayacak. Tek bir omni-model gelecek ve her şeyi sıfır yapılandırmayla kusursuz yapacak; her şirketin kültürünü ilk saniyede anlayacak, her kullanıcının zihnini okuyacak...
+
+Belki gerçekten böyle olur. Ama açıkçası bundan pek emin değilim.
+
+Çünkü zekâ ne kadar gelişirse gelişsin, **bağlam (context)** asla ortadan kalkmaz:
+
+- Bir cerrahın kullandığı yapay zekâ ile bir oyun geliştiricisinin kullandığı ajanın aynı tolerans ve kurallara sahip olması beklenemez.
+- Bir şirketin kurumsal müşteri destek botu ile bir yazarın yaratıcı asistanı aynı mantıkla hareket edemez.
+- Hatta aynı insanın sabah odaklandığı analitik işler ile gece yazdığı edebi denemeler için beklediği yapay zekâ tavrı bile farklıdır.
+
+---
+
+## Kişiselleştirme Yeni Rekabet Alanı Olacak
+
+Bugün *"Hangi modeli seçmeliyim?"* diye düşünüyoruz. Yarın ise model seçmek yerine kendi özel yapay zekâ sistemlerimizi inşa edeceğiz.
+
+> *"En iyi model hangisi?"* sorusundan,  
+> **"Benim işim için en iyi yapay zekâ ekosistemini nasıl oluştururum?"** sorusuna geçiyoruz.
+
+Ve bu noktada **prompt mühendisliği, fine-tuning, RAG (Retrieval-Augmented Generation), bellek (memory), araç kullanımı (tools) ve otonom agent sistemleri** birbirinden ayrı teknolojiler olmaktan çıkıp tek bir çatı altında birleşecek: **Göreve Özel Yapay Zekâ.**
+
+Şirketlerin yüzlerce farklı dev modeli olmayacak; birkaç güçlü temel modelin üzerinde koşan binlerce özelleşmiş mikro-uzman çalışacak.
+
+---
+
+## Sonuç
+
+Yapay zekânın geleceğini düşündüğümüzde genellikle daha büyük parametreler, daha devasa GPU kümeleri ve daha uzun context pencereleri hayal ediyoruz.
+
+Ama bir noktadan sonra asıl yarış modellerin boyutunda değil, şu soruda düğümlenecek:
+
+> **"Bu modeli kendi işin için ne kadar iyi özelleştirebiliyorsun?"**
+
+Çünkü dünyanın en güçlü modeli herkesin erişimine açık olduğunda, modelin kendisi tek başına bir ayrıcalık sağlamaz. Asıl avantaj; ona hangi veriyi verdiğiniz, hangi araçları bağladığınız, hangi kuralları koyduğunuz ve **her prompt'u ne kadar yetkin bir uzmana dönüştürdüğünüzdür.**
+
+Geleceğin yapay zekâ sistemleri tek bir monolitik süper zekâdan değil, yüzlerce küçük uzmanlıktan oluşabilir. Ve biz onlara sadece prompt vermeyeceğiz; onları nakış gibi işleyip şekillendireceğiz.
+
+**Her prompt fine-tuned.**
+
+Belki de bir sonraki büyük paradigma değişimi tam olarak budur.
+
+---
+
+### 🏷️ Etiketler ve Anahtar Kelimeler
+`Her Prompt Fine-Tuned` • `Fine-Tuning Nedir` • `Prompt Mühendisliği` • `Yapay Zeka Özelleştirme` • `AI Agent Sistemleri` • `RAG ve Memory` • `Göreve Özel Yapay Zeka` • `Yapay Zekanın Geleceği`
