@@ -1,0 +1,303 @@
+---
+title: "Yapay Zekâ Fiziksel Dünyaya İndiğinde, Onu Kim Koruyacak?"
+date: "2026-09-05T21:00:00"
+excerpt: "Yapay zekâ ekranlardan çıkıp robotlara, fabrikalara ve arabalara girdiğinde onu nasıl koruyacağız? Modeli değil, gördüğü dünyayı hacklemek ve siber güvenliğin geleceği."
+keywords:
+  [
+    "yapay zeka guvenligi",
+    "ai security",
+    "hardware security",
+    "iot guvenligi",
+    "embedded systems",
+    "fiziksel yapay zeka",
+    "sensör manipülasyonu",
+    "otonom sistemler",
+  ]
+---
+
+Son zamanlarda yapay zekânın yazılımcıları nasıl etkileyeceğini çok düşünüyorum.
+
+- Kod yazmak otomatikleşecek mi?
+- Bir yazılımcı, yapay zekâ sayesinde 10 kişinin yaptığı işi tek başına yapabilecek mi?
+- Backend geliştiricilere daha az ihtiyaç mı olacak?
+
+Bunlar zaten sürekli konuşuluyor. Ama geçenlerde aklıma başka bir şey takıldı.
+
+Belki de **yanlış yere bakıyoruz.**
+
+Çünkü yapay zekâ sonsuza kadar bilgisayar ekranının içerisinde yaşamayacak. Bir noktada dışarı çıkacak:
+
+Arabaya girecek. Drone'a girecek. Fabrikaya girecek. Evlere, hastanelere, enerji sistemlerine, robotlara girecek.
+
+Ve o zaman yapay zekâ güvenliği dediğimiz şey yalnızca **prompt injection** veya **jailbreak** konuştuğumuz bir alan olmaktan çıkabilir.
+
+Çünkü artık yapay zekânın verdiği kararın sonucunda ekranda bir yazı çıkmayacak; **fiziksel dünyada bir şey hareket edecek.**
+
+---
+
+## 1. Önce Biraz Geri Gidelim
+
+Bir süredir kafamda şöyle bir gelecek senaryosu var.
+
+Bugün bir ayakkabı almak istediğinizi düşünün. Ne yapıyorsunuz?
+
+- Uygulamayı indiriyorsunuz.
+- Üye oluyorsunuz.
+- Telefon numarası doğruluyorsunuz.
+- Ayakkabıyı arıyorsunuz.
+- Yorumları okuyorsunuz.
+- Başka sitelerde fiyat karşılaştırıyorsunuz.
+- Sepete ekliyorsunuz.
+- Kart giriyorsunuz.
+- Bankadan doğrulama geliyor.
+- Kargoyu takip ediyorsunuz.
+- Bir sorun çıkarsa müşteri hizmetleriyle konuşuyorsunuz.
+
+Tamam da... **Ben sadece ayakkabı almak istemiştim.** Neden bütün bunlarla ben uğraşıyorum?
+
+Bence yapay zekâ agent'ları yaygınlaştıkça bu gariplik yavaş yavaş ortadan kalkacak. Gelecekte belki de şöyle diyeceğiz:
+
+> *"Bana günlük kullanım için rahat bir ayakkabı bul. 5.000 TL'yi geçmesin."*
+
+Ve konu bizim için orada bitecek. Bizim agent'ımız mağazanın agent'ıyla konuşacak, fiyat karşılaştıracak, sipariş verecek, ödeme yapacak, kargoyu takip edecek ve ürün bozuk çıkarsa iade talebi bile oluşturacak.
+
+İnsan dijital ekonominin her adımını kendisi yapmak yerine, niyetini söyleyen tarafa dönüşebilir.
+
+Ama burada bir adım daha ileri gidersek işler daha ilginç oluyor.
+
+---
+
+## 2. Peki Agent Sadece İnternette Yaşamıyorsa?
+
+Şimdi aynı yapay zekâyı bir fabrikaya koyalım.
+
+Fabrikada:
+
+- Robot kollar,
+- Kameralar,
+- Sıcaklık sensörleri,
+- Konveyör sistemleri,
+- Otonom taşıma araçları,
+- PLC'ler,
+- Depo sistemleri,
+- Üretim makineleri
+
+olduğunu düşünün. Bütün bunların üzerinde de fabrikanın genel işleyişini yöneten bir AI sistemi çalışıyor:
+
+Üretim planını oluşturuyor, robotların görevlerini dağıtıyor, makine arızalarını önceden tahmin ediyor, stok azaldığında sipariş veriyor ve enerji tüketimini optimize ediyor. Belki insan yöneticinin bugün verdiği yüzlerce küçük kararı kendi kendine veriyor.
+
+İlk bakışta gayet güzel. Hatta bunun parçaları bugün bile var.
+
+Ama burada benim çok hoşuma giden — veya biraz korkutucu bulduğum — bir güvenlik problemi ortaya çıkıyor:
+
+> **Yapay zekâyı hacklemenize gerek olmayabilir.**
+
+---
+
+## 3. Yapay Zekâyı Değil, Gerçekliğini Hacklemek
+
+Şöyle düşünelim.
+
+Fabrikadaki bir motorun sıcaklığı 70 derece. Bir sıcaklık sensörü bunu ölçüyor ve yapay zekâ sistemine gönderiyor. AI da bu veriye göre karar veriyor.
+
+Şimdi ben sisteme giriyorum ve sensörden gelen değeri değiştiriyorum: **70 yerine 150 derece gönderiyorum.**
+
+AI ne yapacak? Muhtemelen şöyle düşünecek:
+
+> *"Motor aşırı ısınıyor. Sistemi kapatmam gerekiyor."*
+
+Ve fabrikayı durduracak.
+
+İşin garip tarafı ne biliyor musunuz? **Yapay zekâ burada yanlış karar vermedi.** Kendisine verilen bilgiye göre gayet doğru karar verdi:
+
+- Modeli jailbreak etmedim.
+- Prompt injection yapmadım.
+- Modelin ağırlıklarına dokunmadım.
+
+**Sadece modelin gördüğü dünyayı değiştirdim.**
+
+Ve bence yapay zekânın fiziksel dünyaya girmesiyle birlikte çok önemli hâle gelecek problemlerden biri bu.
+
+---
+
+## 4. AI'ın Gözleri ve Kulakları Sensörler Olacak
+
+Bir insan çevresini nasıl algılıyor? Gözleriyle, kulaklarıyla, dokunarak.
+
+Yapay zekâ fiziksel dünyaya çıktığında onun gözleri ve kulakları ise sensörler olacak:
+
+- Kamera
+- LiDAR
+- GPS
+- Mikrofon
+- Sıcaklık sensörü
+- Basınç sensörü
+- Radar
+- IMU
+
+Ve eğer bunlardan gelen bilgiye güvenemiyorsanız... Dünyanın en iyi yapay zekâ modeline sahip olmanızın çok da anlamı kalmıyor.
+
+Çünkü zekâ ne kadar iyi olursa olsun, **yanlış gerçeklik üzerinde düşünüyorsa doğru sonuca ulaşamaz.**
+
+Burada klasik AI Security ile donanım güvenliğinin garip bir şekilde birbirine yaklaşmaya başladığını düşünüyorum.
+
+---
+
+## 5. Çünkü Aşağı İndikçe Dünya Değişiyor
+
+Web geliştirirken dünya nispeten tanıdık:
+
+`HTTP`, `API`, `Database`, `Authentication`, `Cloud`, `Container`...
+
+Ama fiziksel sisteme inmeye başladığınızda bir anda başka kavramlar çıkıyor:
+
+- UART
+- SPI
+- I²C
+- CAN Bus
+- Firmware
+- Bootloader
+- MCU
+- Secure Boot
+- OTA Firmware Update
+- Debug Interface
+- RF
+- Sensör & Aktüatör
+
+Ve yukarıda AI çalışıyor. Ortaya kabaca şöyle bir zincir çıkıyor:
+
+```text
+AI Agent
+  ↓
+Application
+  ↓
+Network
+  ↓
+Operating System / Firmware
+  ↓
+Hardware
+  ↓
+Sensor / Actuator
+  ↓
+Physical World
+```
+
+Şimdi bu zincirin herhangi bir yerini manipüle edebildiğinizi düşünün. Sonuç zincirin en sonuna kadar gidebilir.
+
+Bu yüzden geleceğin AI güvenliğinin yalnızca modeli korumaktan ibaret olacağını pek düşünmüyorum: **Bütün zinciri korumak gerekecek.**
+
+---
+
+## 6. Kargo Drone'umu Hacklediler... Eee?
+
+Burada ilk aklıma gelen karşı argüman şu oldu:
+
+*Tamam. Bir drone hacklendi, kargomu çaldılar. Ne olacak? Sonuçta dünyanın sonu değil.*
+
+Ama biraz düşününce problemin tek bir cihaz olmadığını fark ediyorsunuz:
+
+- Bir drone hacklenirse problem küçüktür. Peki aynı firmware **500.000 drone'da** çalışıyorsa?
+- Bir otomobilde açık bulunması başka bir şey, aynı yazılımın **milyonlarca otomobilde** çalışması başka bir şey.
+- Bir fabrikadaki sensörün açığı başka bir şey, aynı endüstriyel sistemin **yüzlerce fabrikada** kullanılması bambaşka bir şey.
+
+Burada saldırgan için ilginç olan cihazın kendisi değil: **Ölçek.**
+
+Tek bir zayıflık buluyorsunuz ama aynı zayıflık yüz binlerce fiziksel sisteme kopyalanmış durumda. Bir anda basit bir IoT açığı, kritik bir altyapı problemine dönüşüyor.
+
+---
+
+## 7. Belki Geleceğin Değerli Alanlarından Biri Burası Olacak
+
+Sonra olayın meslek tarafını düşünmeye başladım. Şu anda sektörde ilginç bir ayrım var:
+
+- Siber güvenlik bilen bir sürü insan var.
+- Embedded bilen bir sürü insan var.
+- Elektronik bilen insanlar var.
+- AI bilen insanlar var.
+
+Ama bunların **kesişim kümesi** giderek küçülüyor.
+
+Mesela gerçekten; C/C++, Embedded Linux, Firmware, MCU, Networking, CAN / SPI / I²C / UART, Reverse Engineering, Hardware Debugging, Secure Boot, Cryptography, Exploit Development, IoT ve OT / ICS bilen... ve aynı zamanda üzerine **AI agent sistemlerinin nasıl çalıştığını anlayabilecek** birini düşünün.
+
+Biraz garip bir mühendis profili. Ama bana kalırsa gelecekte inanılmaz değerli olabilir.
+
+Çünkü yapay zekâ daha fazla kod yazdıkça yazılım üretmenin maliyeti düşebilir. Fakat üretilen bu yazılım fiziksel dünyayı kontrol etmeye başladığında başka bir soru ortaya çıkıyor:
+
+> **"Bu sistem gerçekten güvenli mi?"**
+
+Bu sorunun cevabını yalnızca kod okuyarak veremeyebilirsiniz. Bazen firmware'e inmeniz gerekir, bazen PCB'ye bakmanız gerekir, bazen network trafiğine, bazen sensöre, bazen de yapay zekânın karar mekanizmasına...
+
+---
+
+## 8. Belki “AI Security” Diye Ayrı Bir Alan Bile Kalmayacak
+
+Bugün AI Security deyince genellikle şunları konuşuyoruz:
+
+- Prompt injection
+- Jailbreak
+- Model poisoning
+- Data leakage
+- Model extraction
+
+Bunların hepsi önemli. Ama AI gerçek dünyaya bağlandığında sınırlar tamamen bulanıklaşabilir.
+
+Bir otonom aracın AI sistemine saldırmak istediğimi düşünelim: Modele saldırmak zorunda değilim.
+
+- GPS'i spoof edebilirim.
+- Kamerayı yanıltabilirim.
+- CAN Bus'a sahte mesaj gönderebilirim.
+- Firmware'i değiştirebilirim.
+- Sensör verisini manipüle edebilirim.
+
+AI yukarıda kusursuz çalışıyor olabilir. Ama aşağıdaki dünya yalan söylüyorsa... ne kadar zeki olduğunun hiçbir önemi kalmıyor.
+
+Belki birkaç yıl sonra **AI Security, IoT Security, Embedded Security, Hardware Security ve OT Security** arasındaki çizgiler bugün olduğu kadar belirgin olmayacak. Çünkü sistemlerin kendileri de artık bu kadar ayrık olmayacak.
+
+---
+
+## 9. Belki Asıl Yarış Modelde Değildir
+
+Şu anda bütün teknoloji dünyası model yarışını takip ediyor:
+
+- GPT mi daha iyi?
+- Claude mu?
+- Gemini mi?
+- Kim daha iyi kod yazıyor?
+- Kim daha iyi reasoning yapıyor?
+- Kim benchmark'ta kimi geçti?
+
+Ama modeller yeterince güçlü hâle geldiğinde belki de daha önemli soru şu olacak:
+
+> **"Bu zekâyı gerçek dünyaya ne kadar güvenli bağlayabiliyoruz?"**
+
+Çünkü bilgisayar ekranındaki bir yapay zekâ hata yaptığında kötü bir metin veya hatalı bir kod alırsınız. Ama bir fabrikayı veya robot kolunu kontrol eden yapay zekâ hata yaptığında işler çok daha ciddidir.
+
+---
+
+## Sonuç: Yapay Zekâya Bir Beden Veriyoruz
+
+Sanırım benim kafamdaki fikir burada düğümleniyor.
+
+Bugüne kadar yapay zekâyı büyük ölçüde bir **beyin** olarak düşündük: Metin yazıyor, kod yazıyor, araştırma yapıyor, karar veriyor.
+
+Ama yavaş yavaş bu beynin etrafına **bir beden inşa ediyoruz:**
+
+- Kameralar gözleri oluyor,
+- Mikrofonlar kulakları,
+- Sensörler sinir sistemi,
+- Robotlar elleri,
+- Drone'lar ve araçlar hareket kabiliyeti,
+- İnternet ise bütün bunları birbirine bağlayan iletişim sistemi.
+
+Belki de bundan sonraki büyük güvenlik problemi yapay zekânın ne düşündüğü değil... **Gördüğü dünyanın gerçekten doğru olup olmadığı olacak.**
+
+Bilmiyorum.
+
+Belki de gelecekte siber güvenliğin en değerli insanları sadece web pentester'ları olmayacak. Elektronik bilen, firmware okuyabilen, ağı anlayan ve yukarıdaki yapay zekâ sisteminin bütün bunlarla nasıl etkileştiğini görebilen hibrit mühendisler olacak.
+
+Ama yapay zekâ gerçekten ekranın dışına çıkacaksa... Bana pek de mantıksız gelmiyor.
+
+---
+
+### 🏷️ Etiketler ve Anahtar Kelimeler
+`Yapay Zeka Güvenliği` • `AI Security` • `Hardware Security` • `IoT Güvenliği` • `Embedded Systems` • `Fiziksel Yapay Zeka` • `Sensör Manipülasyonu` • `Otonom Sistemler`
